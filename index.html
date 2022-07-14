@@ -20,7 +20,21 @@
     <main>
 
         <div class="heading">
-            <h1>Minefield</h1>
+            <div class="w-50">
+                <h1>Minefield</h1>
+                <p id="point">Punti</p>
+            </div>
+            <div class="w-50">
+                <label for="difficulty">Select Level</label>
+                <select name="difficulty" id="difficulty" placeholder="Lorem">
+                    <option value="easy">Easy</option>
+                    <option value="hard">hard</option>
+                    <option value="impossible">impossible</option>
+                </select>
+                <div class="btn-wrapper">
+                    <button id="btnSelect" class="btn">Select</button>
+                </div>
+            </div>
         </div>
 
         <div id="grid">
