@@ -26,10 +26,6 @@ btnSelect.addEventListener('click', function(){
     getGrid(width)
 })
 
-btnReset.addEventListener('click', function(){
-    level = document.getElementById('difficulty').value = ""
-})
-
 // function getGrid
 function getGrid(width){
     // ciclo per creazione griglia
@@ -48,11 +44,15 @@ function getGrid(width){
         grid.append(cell)
         cells.push(cell)
     }
+
     selectCell()
+    getBombs(width * width )
+    console.log(bombs)
 }
 
 // function selectCell
 function selectCell(){
+    let selectedCell = []
     for (i = 0; i < cells.length; i++){
         let currentCellId = document.getElementById(i)
         currentCellId.addEventListener('click', function(){
@@ -60,7 +60,10 @@ function selectCell(){
                 this.classList.remove('cell-clicked')
             }else{
                 this.classList.add('cell-clicked')
+                selectedCell.push(this)
+                console.log(selectedCell)
             }
         })
     }
 }
+
